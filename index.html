@@ -3,42 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>Academic Research Portal</title>
-    <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">
     <style>
-        body { background: #f4f7f9; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .container { text-align: center; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.05); border: 1px solid #e1e4e8; width: 350px; }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Segoe UI', Tahoma, sans-serif; background: #202124; }
         
-        /* This makes the link look like a real school button */
-        .launch-link { 
-            display: inline-block;
-            background: #0366d6; 
-            color: white; 
-            text-decoration: none;
-            padding: 14px 28px; 
-            font-size: 16px; 
-            border-radius: 6px; 
-            font-weight: 600; 
-            width: 80%;
-            transition: background 0.2s;
+        /* The Fake Browser UI */
+        .browser-header {
+            background: #35363a;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            border-bottom: 1px solid #1c1c1c;
         }
-        .launch-link:hover { background: #0255b3; }
+
+        .dots { display: flex; gap: 8px; margin-right: 20px; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+
+        /* The Locked Bar: It LOOKS like a URL bar but it's just a DIV (not an input) */
+        .locked-url-bar {
+            background: #202124;
+            color: #9aa0a6;
+            flex-grow: 1;
+            height: 28px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            font-size: 13px;
+            user-select: none; /* Prevents clicking or highlighting */
+        }
+
+        /* The Game Area */
+        #app-frame {
+            width: 100%;
+            height: calc(100% - 45px);
+            border: none;
+            background: white;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2 style="color: #24292e;">Research Module 4.0</h2>
-    <p style="color: #586069;">Authenticated Session: #7742. Access the cloud database for your assignment.</p>
-    
-    <a href="https://now.gg/apps/a/19900/b.html" class="launch-link" onclick="changeTitle()">Launch Simulation</a>
-</div>
+    <div class="browser-header">
+        <div class="dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+        </div>
+        <div class="locked-url-bar">
+            <span>🔒 secure-connection.internal/research-module-144</span>
+        </div>
+    </div>
 
-<script>
-function changeTitle() {
-    // This renames the tab just as you click it
-    document.title = "Classroom Data Analysis";
-}
-</script>
+    <iframe id="app-frame" src=""></iframe>
 
+    <script>
+        window.onload = function() {
+            // This is the active now.gg mirror that usually allows embedding
+            const secureLink = "https://geometry-spot.com/roblox/";
+            document.getElementById('app-frame').src = secureLink;
+            
+            // Keeps the tab name stealthy
+            document.title = "Research Asset #144";
+        }
+    </script>
 </body>
 </html>
