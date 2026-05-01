@@ -4,47 +4,38 @@
     <meta charset="UTF-8">
     <title>Academic Research Portal</title>
     <style>
-        body { background: #f8f9fa; font-family: 'Arial', sans-serif; margin: 0; padding: 0; }
-        .header { background: white; padding: 20px; border-bottom: 1px solid #dfe1e5; display: flex; align-items: center; }
-        /* LOCKED: You can't type in this box */
-        .search-box-fake { background: #fff; border: 1px solid #dfe1e5; border-radius: 24px; padding: 10px 20px; width: 400px; color: #202124; font-size: 16px; margin-left: 20px; cursor: default; }
-        .results-container { max-width: 700px; margin: 30px auto; padding: 0 20px; }
-        .result-item { margin-bottom: 30px; }
-        .result-item a { color: #1a0dab; font-size: 20px; text-decoration: none; display: block; margin-bottom: 5px; }
-        .result-item a:hover { text-decoration: underline; }
-        .result-item cite { color: #006621; font-style: normal; font-size: 14px; }
-        .result-item p { color: #4d5156; font-size: 14px; line-height: 1.5; margin-top: 5px; }
-        .logo { font-weight: bold; color: #4285f4; font-size: 24px; }
+        body { background: #f4f7f9; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { text-align: center; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.05); border: 1px solid #e1e4e8; width: 350px; }
+        h2 { color: #24292e; margin-bottom: 10px; }
+        p { color: #586069; font-size: 14px; margin-bottom: 25px; }
+        .launch-btn { background: #0366d6; color: white; border: none; padding: 14px 28px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%; }
+        .launch-btn:hover { background: #0255b3; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <div class="logo">Search</div>
-        <div class="search-box-fake">Roblox unblocked results</div>
-    </div>
+<div class="container">
+    <h2>Data Module 4.0</h2>
+    <p>Access the cloud-based simulation database for your current assignment.</p>
+    
+    <button class="launch-btn" onclick="openNowGG()">Launch Simulation</button>
+</div>
 
-    <div class="results-container">
-        <p style="color: #70757a; font-size: 14px;">Results for research module #144</p>
-
-        <div class="result-item">
-            <cite>https://sites.google.com > view > unblocked-games-99</cite>
-            <a href="https://sites.google.com/view/unblocked-games-99/roblox" target="_blank">Roblox Unblocked - Google Sites Archive</a>
-            <p>Access the simulation environment directly. This mirror uses a Google Sites wrapper to bypass traditional network blocks.</p>
-        </div>
-
-        <div class="result-item">
-            <cite>https://gd7playz.blogspot.com > rr</cite>
-            <a href="https://gd7playz.blogspot.com/2026/01/rr.html" target="_blank">Secondary Data Portal: Module 2026.01</a>
-            <p>Authorized research data for school networks. If you see an ad-block error, refresh the page or try Mirror 3.</p>
-        </div>
-
-        <div class="result-item">
-            <cite>https://now.gg > games > roblox-mini-games</cite>
-            <a href="https://now.gg/games/roblox-mini-games/2.html" target="_blank">Interactive Research Tool - Session 44</a>
-            <p>Cloud-based simulation tool. Note: High-speed internet required for full data synchronization.</p>
-        </div>
-    </div>
+<script>
+function openNowGG() {
+    // This opens now.gg directly
+    var gameUrl = "https://now.gg/apps/roblox-corporation/1316/roblox.html";
+    
+    // We open a new window
+    var win = window.open('about:blank', '_blank');
+    
+    // We tell the new window to go to now.gg
+    win.location.href = gameUrl;
+    
+    // This renames the tab at the top so it doesn't say "Roblox"
+    win.document.title = "Student Research Viewer";
+}
+</script>
 
 </body>
 </html>
