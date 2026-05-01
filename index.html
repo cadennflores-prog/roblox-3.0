@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Research Portal</title>
+    <style>
+        body { background: #f0f2f5; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .box { text-align: center; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .launch-btn { background: #1a73e8; color: white; border: none; padding: 15px 30px; font-size: 16px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Secondary Research Module</h2>
+    <p>Launch the database to view archived simulation entries.</p>
+    <button class="launch-btn" onclick="launch()">Open Database</button>
+</div>
+
+<script>
+function launch() {
+    var win = window.open('about:blank', '_blank');
+    
+    // This part opens the tab and locks the search bar area
+    win.document.write(`
+        <html>
+        <head>
+            <title>Data Archive</title>
+            <style>
+                body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+                iframe { width: 100%; height: 100%; border: none; }
+                
+                /* Click-shield: Blocks the search bar so they can't type */
+                #shield { 
+                    position: absolute; 
+                    top: 0; 
+                    left: 0; 
+                    width: 100%; 
+                    height: 125px; 
+                    background: rgba(0,0,0,0); 
+                    z-index: 999; 
+                }
+            </style>
+        </head>
+        <body>
+            <div id="shield"></div>
+            <iframe src="https://duckduckgo.com/?q=Roblox+unblocked+mirrors&k1=-1&ko=-2&kz=-1&kac=-1"></iframe>
+        </body>
+        </html>
+    `);
+}
+</script>
+
+</body>
+</html>
