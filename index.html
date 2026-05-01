@@ -2,71 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Academic Research Portal</title>
+    <title>Curriculum Resource Viewer</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Segoe UI', Tahoma, sans-serif; background: #202124; }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #202124; font-family: 'Segoe UI', sans-serif; }
         
-        /* The Fake Browser UI */
-        .browser-header {
+        /* The Browser Top Bar */
+        .header {
             background: #35363a;
-            height: 45px;
+            height: 40px;
             display: flex;
             align-items: center;
-            padding: 0 15px;
+            padding: 0 10px;
             border-bottom: 1px solid #1c1c1c;
         }
 
-        .dots { display: flex; gap: 8px; margin-right: 20px; }
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
-        .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-
-        /* The Locked Bar: It LOOKS like a URL bar but it's just a DIV (not an input) */
-        .locked-url-bar {
+        .url-bar {
             background: #202124;
-            color: #9aa0a6;
+            color: #bdc1c6;
+            font-size: 12px;
+            padding: 5px 15px;
+            border-radius: 15px;
             flex-grow: 1;
-            height: 28px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            padding: 0 15px;
-            font-size: 13px;
-            user-select: none; /* Prevents clicking or highlighting */
+            margin: 0 10px;
+            /* This is the key: it's not an input, so nobody can type! */
+            user-select: none;
         }
 
-        /* The Game Area */
-        #app-frame {
+        /* The Game Frame */
+        iframe {
             width: 100%;
-            height: calc(100% - 45px);
+            height: calc(100% - 40px);
             border: none;
-            background: white;
+            background: #fff;
         }
     </style>
 </head>
 <body>
 
-    <div class="browser-header">
-        <div class="dots">
-            <div class="dot red"></div>
-            <div class="dot yellow"></div>
-            <div class="dot green"></div>
+    <div class="header">
+        <div style="display:flex; gap:5px;">
+            <div style="width:10px; height:10px; border-radius:50%; background:#ff5f56;"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#ffbd2e;"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#27c93f;"></div>
         </div>
-        <div class="locked-url-bar">
-            <span>🔒 secure-connection.internal/research-module-144</span>
-        </div>
+        <div class="url-bar">🔒 district-apps.internal/resource/simulation-v4</div>
     </div>
 
-    <iframe id="app-frame" src=""></iframe>
+    <iframe src="https://nowgg.lol/play/roblox-corporation/1316/roblox"></iframe>
 
-    <script>
-        window.onload = function() {
-            // This is the active now.gg mirror that usually allows embedding
-            const secureLink = "https://geometry-spot.com/roblox/";
-            document.getElementById('app-frame').src = secureLink;
-            
-            // Keeps the tab name stealthy
-            document.title = "Research Asset #144";
-        }
-    </script>
 </body>
 </html>
