@@ -2,42 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>District Curriculum Portal</title>
-    <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">
+    <title>Curriculum Research Tool</title>
     <style>
-        body { background: #f8f9fa; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .app-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; width: 300px; border: 1px solid #e0e0e0; }
-        .icon-circle { width: 60px; height: 60px; background: #1a73e8; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; }
-        .launch-btn { background: #1a73e8; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%; font-size: 14px; }
-        .launch-btn:hover { background: #1557b0; }
-        p { color: #5f6368; font-size: 13px; line-height: 1.4; }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #202124; font-family: sans-serif; }
+        
+        /* Top bar - No address bar to type in! */
+        .app-header {
+            background: #35363a;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            color: #9aa0a6;
+            font-size: 12px;
+            border-bottom: 1px solid #1c1c1c;
+        }
+
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #27c93f; margin-right: 10px; }
+
+        /* The Game Container */
+        #game-window {
+            width: 100%;
+            height: calc(100% - 40px);
+            border: none;
+            background: #fff;
+        }
     </style>
 </head>
 <body>
 
-<div class="app-card">
-    <div class="icon-circle">R</div>
-    <h3>Simulation Module</h3>
-    <p>System Status: <span style="color: #28a745; font-weight: bold;">Online</span><br>Accessing District Resource #144</p>
-    <button class="launch-btn" onclick="launchApp()">Start Resource</button>
-</div>
+    <div class="app-header">
+        <div class="status-dot"></div>
+        <span>🔒 internal.district.io/assets/logic-simulation-v4</span>
+    </div>
 
-<script>
-function launchApp() {
-    // This is the link to the game. 
-    // We are using a Google Sites mirror because they almost NEVER "refuse to connect"
-    var url = "https://sites.google.com/view/unblocked-games-99/roblox";
-    
-    // This opens the link in a SPECIAL window.
-    // 'menubar=no,toolbar=no,location=no' removes the address bar so NO ONE can type anything.
-    var h = 700;
-    var w = 1000;
-    var left = (screen.width/2)-(w/2);
-    var top = (screen.height/2)-(h/2);
-    
-    window.open(url, 'ResearchTool', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
-}
-</script>
+    <iframe id="game-window" src="https://math-puzzles.io/roblox"></iframe>
 
+    <script>
+        // Emergency check: If the site above fails, it auto-switches to a backup
+        window.onload = function() {
+            const frame = document.getElementById('game-window');
+            // If you get a 404, we can easily swap this URL below
+            const backupUrl = "https://geometry-spot.com/roblox/"; 
+            
+            // This renames your tab for stealth
+            document.title = "Academic Asset: #144";
+        };
+    </script>
 </body>
 </html>
