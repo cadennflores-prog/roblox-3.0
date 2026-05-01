@@ -7,30 +7,36 @@
     <style>
         body { background: #f4f7f9; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
         .container { text-align: center; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.05); border: 1px solid #e1e4e8; width: 350px; }
-        .launch-btn { background: #0366d6; color: white; border: none; padding: 14px 28px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%; }
+        
+        /* This makes the link look like a real school button */
+        .launch-link { 
+            display: inline-block;
+            background: #0366d6; 
+            color: white; 
+            text-decoration: none;
+            padding: 14px 28px; 
+            font-size: 16px; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            width: 80%;
+            transition: background 0.2s;
+        }
+        .launch-link:hover { background: #0255b3; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h2 style="color: #24292e;">Research Module 4.0</h2>
-    <p style="color: #586069;">Authenticated Session: #7742. Click below to launch the simulation database.</p>
+    <p style="color: #586069;">Authenticated Session: #7742. Access the cloud database for your assignment.</p>
     
-    <button class="launch-btn" onclick="launchGame()">Launch Simulation</button>
+    <a href="https://now.gg/apps/a/19900/b.html" class="launch-link" onclick="changeTitle()">Launch Simulation</a>
 </div>
 
 <script>
-function launchGame() {
-    // This is the specific link you found
-    const gameUrl = "https://now.gg/apps/a/19900/b.html";
-
-    // 1. CHANGE THE TAB NAME FIRST
-    // This makes the tab say "Document" even while it's loading the game
+function changeTitle() {
+    // This renames the tab just as you click it
     document.title = "Classroom Data Analysis";
-
-    // 2. REDIRECT THE PAGE
-    // By using 'location.replace', we bypass the "Refused to Connect" iframe error
-    window.location.replace(gameUrl);
 }
 </script>
 
