@@ -5,60 +5,34 @@
     <title>Academic Research Portal</title>
     <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Segoe UI', sans-serif; background: #f0f2f5; }
-        
-        /* The Launcher Screen */
-        .launcher { display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center; }
-        .box { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #d1d9e0; }
-        .btn { background: #1a73e8; color: white; border: none; padding: 15px 30px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: bold; }
-        
-        /* The Game Viewer */
-        #view-container { display: none; width: 100%; height: 100%; position: relative; background: #000; }
-        iframe { width: 100%; height: 100%; border: none; }
-
-        /* THE LOCK: This invisible shield blocks the top area where search/URL bars usually sit */
-        #shield {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px; /* Blocks the top navigation of the game page */
-            background: rgba(0,0,0,0);
-            z-index: 1000;
-            cursor: not-allowed;
-        }
+        body { background: #f4f7f9; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { text-align: center; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.05); border: 1px solid #e1e4e8; width: 350px; }
+        .launch-btn { background: #0366d6; color: white; border: none; padding: 14px 28px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%; }
     </style>
 </head>
 <body>
 
-    <div class="launcher" id="landing">
-        <div class="box">
-            <h2 style="color:#202124;">Data Analysis Module v4</h2>
-            <p style="color:#5f6368;">Click below to synchronize with the remote simulation database.</p>
-            <button class="btn" onclick="startSession()">Open Database</button>
-        </div>
-    </div>
+<div class="container">
+    <h2 style="color: #24292e;">Research Module 4.0</h2>
+    <p style="color: #586069;">Authenticated Session: #7742. Click below to launch the simulation database.</p>
+    
+    <button class="launch-btn" onclick="launchGame()">Launch Simulation</button>
+</div>
 
-    <div id="view-container">
-        <div id="shield"></div>
-        <iframe id="game-frame" src=""></iframe>
-    </div>
+<script>
+function launchGame() {
+    // This is the specific link you found
+    const gameUrl = "https://now.gg/apps/a/19900/b.html";
 
-    <script>
-        function startSession() {
-            // Hide the boring page, show the game container
-            document.getElementById('landing').style.display = 'none';
-            document.getElementById('view-container').style.display = 'block';
-            
-            // Your found link
-            const target = "https://now.gg/apps/a/19900/b.html";
-            
-            // Load the link into the frame
-            document.getElementById('game-frame').src = target;
+    // 1. CHANGE THE TAB NAME FIRST
+    // This makes the tab say "Document" even while it's loading the game
+    document.title = "Classroom Data Analysis";
 
-            // Change the tab name instantly so "Roblox" never shows up
-            document.title = "Classroom Data Feed";
-        }
-    </script>
+    // 2. REDIRECT THE PAGE
+    // By using 'location.replace', we bypass the "Refused to Connect" iframe error
+    window.location.replace(gameUrl);
+}
+</script>
+
 </body>
 </html>
