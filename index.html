@@ -2,92 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>System Browser - Data Module 144</title>
+    <title>Academic Data Module</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #1a1a1a; font-family: 'Segoe UI', sans-serif; }
+        body { background: #f0f2f5; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 320px; border: 1px solid #d1d9e0; }
+        h2 { color: #1c1e21; margin-bottom: 10px; font-size: 20px; }
+        p { color: #606770; font-size: 14px; margin-bottom: 30px; }
         
-        /* THE BROWSER FRAME */
-        .browser-ui { background: #333; height: 45px; display: flex; align-items: center; padding: 0 15px; border-bottom: 1px solid #000; }
-        
-        .nav-buttons { display: flex; gap: 15px; margin-right: 20px; }
-        .nav-btn { color: #ccc; cursor: pointer; font-size: 18px; user-select: none; }
-        .nav-btn:hover { color: white; }
-
-        /* THE LOCKED ADDRESS BAR */
-        .address-bar {
-            background: #222;
-            color: #888;
-            border-radius: 20px;
-            flex-grow: 1;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            padding: 0 15px;
-            font-size: 13px;
-            border: 1px solid #444;
-            /* CRITICAL: No pointer events means you can't click it to type */
-            pointer-events: none; 
-            user-select: none;
+        .btn { 
+            display: inline-block;
+            background: #1877f2; 
+            color: white; 
+            text-decoration: none; 
+            padding: 15px 25px; 
+            border-radius: 8px; 
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            width: 80%;
         }
-
-        .lock-icon { margin-right: 8px; color: #4CAF50; }
-
-        /* THE VIEWPORT */
-        #content-area {
-            width: 100%;
-            height: calc(100% - 45px);
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .launch-screen { text-align: center; color: #333; }
-        .start-btn { 
-            background: #4285f4; color: white; border: none; padding: 15px 40px; 
-            font-size: 18px; border-radius: 5px; cursor: pointer; font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+        .btn:hover { background: #166fe5; transform: translateY(-2px); }
     </style>
 </head>
 <body>
 
-    <div class="browser-ui">
-        <div class="nav-buttons">
-            <div class="nav-btn" onclick="location.reload()">↻</div>
-            <div class="nav-btn" style="opacity:0.5;">←</div>
-            <div class="nav-btn" style="opacity:0.5;">→</div>
-        </div>
-        
-        <div class="address-bar">
-            <span class="lock-icon">🔒</span>
-            <span>secure-tunnel.internal/apps/roblox-v144</span>
-        </div>
-    </div>
+<div class="card">
+    <h2>Data Module 144</h2>
+    <p>Press the button to initialize the secure remote simulation.</p>
+    
+    <a href="#" class="btn" onclick="autoLaunch()">INITIALIZE</a>
+</div>
 
-    <div id="content-area">
-        <div class="launch-screen" id="gate">
-            <h1>Session Ready</h1>
-            <p>Click below to initialize the secure game environment.</p>
-            <br>
-            <button class="start-btn" onclick="openGame()">START SIMULATION</button>
-        </div>
-    </div>
+<script>
+function autoLaunch() {
+    // We use a Google Search URL parameter (?q=) to "auto-type" Roblox
+    // and wrap it in Google Translate to bypass the school filter.
+    const autoTypeLink = "https://translate.google.com/translate?sl=en&tl=es&u=https://www.google.com/search?q=roblox+now+gg+unblocked";
+    
+    // This renames your tab instantly
+    document.title = "Classroom Data Feed";
+    
+    // Redirects the whole page to the "Pre-typed" search
+    window.location.href = autoTypeLink;
+}
+</script>
 
-    <script>
-        function openGame() {
-            // This is the link you found. 
-            // We use window.open to bypass the "Refused to Connect" error.
-            const url = "https://now.gg/apps/roblox-corporation/1316/roblox.html";
-            
-            // This opens the game in a new window but keeps your "Browser" tab open
-            window.open(url, '_blank');
-            
-            // Change the text on your current page so it looks like it's "Monitoring"
-            document.getElementById('gate').innerHTML = "<h1>Simulation Active</h1><p>Data stream is currently open in a secondary secure window.</p>";
-            document.title = "Internal Data Feed";
-        }
-    </script>
 </body>
 </html>
