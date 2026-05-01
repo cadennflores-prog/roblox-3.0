@@ -6,7 +6,7 @@
     <style>
         body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #202124; font-family: sans-serif; }
         
-        /* Top bar - No address bar to type in! */
+        /* The Locked Bar (No Typing Allowed) */
         .app-header {
             background: #35363a;
             height: 40px;
@@ -18,10 +18,17 @@
             border-bottom: 1px solid #1c1c1c;
         }
 
-        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #27c93f; margin-right: 10px; }
+        .url-display { 
+            background: #202124; 
+            padding: 4px 12px; 
+            border-radius: 12px; 
+            flex-grow: 1; 
+            margin: 0 10px; 
+            user-select: none;
+            color: #8ab4f8; /* Blue-ish like a link but unclickable */
+        }
 
-        /* The Game Container */
-        #game-window {
+        #game-frame {
             width: 100%;
             height: calc(100% - 40px);
             border: none;
@@ -32,22 +39,11 @@
 <body>
 
     <div class="app-header">
-        <div class="status-dot"></div>
-        <span>🔒 internal.district.io/assets/logic-simulation-v4</span>
+        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27c93f; margin-right: 10px;"></div>
+        <div class="url-display">🔒 translate.google.com/internal-module-144</div>
     </div>
 
-    <iframe id="game-window" src="https://math-puzzles.io/roblox"></iframe>
+    <iframe id="game-frame" src="https://translate.google.com/translate?sl=en&tl=es&u=https://geometry-spot.com/roblox/"></iframe>
 
-    <script>
-        // Emergency check: If the site above fails, it auto-switches to a backup
-        window.onload = function() {
-            const frame = document.getElementById('game-window');
-            // If you get a 404, we can easily swap this URL below
-            const backupUrl = "https://geometry-spot.com/roblox/"; 
-            
-            // This renames your tab for stealth
-            document.title = "Academic Asset: #144";
-        };
-    </script>
 </body>
 </html>
